@@ -57,3 +57,8 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Lang
 - Ubuntu 22.04.5 LTS 
 - Python 3.10+ (conda is recommended)
 - Ollama (for LLM inference)
+
+## References 
+1. https://bishalbose294.medium.com/building-a-simple-rag-system-from-scratch-a-comprehensive-guide-6667af8ccb8c
+2. https://medium.com/@suraj_bansal/build-your-own-ai-chatbot-a-beginners-guide-to-rag-and-langchain-0189a18ec401
+3. https://medium.com/@lars.chr.wiik/a-straightforward-guide-to-retrieval-augmented-generation-rag-0031bccece7f
