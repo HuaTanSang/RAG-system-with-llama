@@ -3,6 +3,9 @@ This module provides the VectorStore class for storing and searching document em
 """
 
 import faiss
+import os 
+
+from dotenv import load_dotenv
 
 from langchain_community.docstore.in_memory import InMemoryDocstore
 from langchain_community.vectorstores import FAISS
@@ -19,8 +22,10 @@ class VectorStore:
         """
         Initializes the VectorStore with Ollama embeddings and a FAISS index.
         """
+        load_dotenv() 
+        model_name = os.getenv("MODEL_NAME", "llama3.2:1b")
         # Create an embedding function using Ollama LLM
-        self.embeddings = OllamaEmbeddings(model="llama3.2:1b")
+        self.embeddings = OllamaEmbeddings(model=model_name)
         # Initialize FAISS index with the embedding size
         self.index = faiss.IndexFlatL2(len(self.embeddings.embed_query("hello world")))
         # Create a FAISS vector store with in-memory docstore
