@@ -17,7 +17,7 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Lang
 - `requirements.txt`: Python dependencies
 - `data.pdf`: Sample PDF document
 
-## Usage
+## Installation
 1. Clone and cd to this repository: 
     ```bash
     git clone https://github.com/HuaTanSang/RAG-system-with-llama.git && 
@@ -29,7 +29,12 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Lang
    pip install -r requirements.txt
    ```
 
-3. Open another terminal and start LLAMA model 
+3. Create `.env` file
+    ```bash
+    echo "MODEL_NAME='llama3.2:1b'" >> .env
+    ```
+    
+4. Open another terminal and start LLAMA model 
     ```bash
     # Download ollama 
     curl -fsSL https://ollama.com/install.sh | sh  
@@ -37,12 +42,12 @@ This project implements a Retrieval-Augmented Generation (RAG) system using Lang
     ollama pull llama3.2:1b && ollama run llama3.2:1b
     ```
 
-4. Place your PDF file in the project directory (default: `data.pdf`).
-5. Run the main script:
+5. Place your PDF file in the project directory (default: `data.pdf`).
+6. Run the main script:
    ```bash
    python3 main.py
    ```
-6. The system will print the answer to the sample query based on the PDF content. You can change query in the `main.py` file. 
+7. The system will print the answer to the sample query based on the PDF content. You can change query in the `main.py` file. 
 
 ## Configuration
 - Model name can be set in `.env` (default: `llama3.2:1b`)
